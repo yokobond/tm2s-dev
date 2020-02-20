@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const https = require('https');
+const { execSync } = require('child_process')
 
 const tm2sRoot = '../tm2scratch';
 const VmRoot = '../scratch-vm';
@@ -101,3 +102,10 @@ if (indexCode.includes(ExtId)) {
     fs.writeFileSync(path.resolve(path.join(GuiRoot, GuiExtIndex)), indexCode);
     console.log(`Added to extrnsion list: ${ExtId}`);
 }
+
+// Use local repositories.
+let stdout = execSync(`cd ${VmRoot} && npm link`);
+console.log(`stdout: ${stdout.toString()}`);
+
+stdout = execSync(`cd ${GuiRoot} && npm link scratch-vm`);
+console.log(`stdout: ${stdout.toString()}`);
