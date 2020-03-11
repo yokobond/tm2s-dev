@@ -3,7 +3,7 @@ const fs = require('fs');
 const https = require('https');
 const { execSync } = require('child_process')
 
-const tm2sRoot = '../tm2scratch';
+const ExtRoot = '../tm2scratch';
 const VmRoot = '../scratch-vm';
 const GuiRoot = '../scratch-gui';
 
@@ -20,7 +20,7 @@ const GuiExtIndexReplacement = fs.readFileSync('./gui-ext-index-replacement.jsx'
 
 // Make symbolic link in scratch-vm. 
 try {
-    fs.symlinkSync(path.resolve(path.join(tm2sRoot, 'scratch-vm', VmExtPath)), path.resolve(path.join(VmRoot, VmExtPath)));
+    fs.symlinkSync(path.resolve(path.join(ExtRoot, 'scratch-vm', VmExtPath)), path.resolve(path.join(VmRoot, VmExtPath)));
     console.log(`Make link: ${path.resolve(path.join(VmRoot, VmExtPath))}`);
 } catch (err) {
     console.log(`Already exists link: ${path.resolve(path.join(VmRoot, VmExtPath))}`);
@@ -28,17 +28,17 @@ try {
 
 // Make symbolic link from scratch-vm for ESLint.
 try {
-    fs.symlinkSync(path.resolve(path.join(VmRoot, 'node_modules')), path.resolve(path.join(tm2sRoot, 'scratch-vm', 'node_modules')));
-    console.log(`Make link: ${path.resolve(path.join(tm2sRoot, 'scratch-vm', 'node_modules'))}`);
+    fs.symlinkSync(path.resolve(path.join(VmRoot, 'node_modules')), path.resolve(path.join(ExtRoot, 'scratch-vm', 'node_modules')));
+    console.log(`Make link: ${path.resolve(path.join(ExtRoot, 'scratch-vm', 'node_modules'))}`);
 } catch (err) {
-    console.log(`Already exists link: ${path.resolve(path.join(tm2sRoot, 'scratch-vm', 'node_modules'))}`);
+    console.log(`Already exists link: ${path.resolve(path.join(ExtRoot, 'scratch-vm', 'node_modules'))}`);
 }
 
 try {
-    fs.symlinkSync(path.resolve(path.join(VmRoot, 'src', '.eslintrc.js')), path.resolve(path.join(tm2sRoot, 'scratch-vm', 'src', '.eslintrc.js')));
-    console.log(`Make link: ${path.resolve(path.join(tm2sRoot, 'scratch-vm', 'src', '.eslintrc.js'))}`);
+    fs.symlinkSync(path.resolve(path.join(VmRoot, 'src', '.eslintrc.js')), path.resolve(path.join(ExtRoot, 'scratch-vm', 'src', '.eslintrc.js')));
+    console.log(`Make link: ${path.resolve(path.join(ExtRoot, 'scratch-vm', 'src', '.eslintrc.js'))}`);
 } catch (err) {
-    console.log(`Already exists link: ${path.resolve(path.join(tm2sRoot, 'scratch-vm', 'src', '.eslintrc.js'))}`);
+    console.log(`Already exists link: ${path.resolve(path.join(ExtRoot, 'scratch-vm', 'src', '.eslintrc.js'))}`);
 }
 
 // Download ML5.
@@ -71,7 +71,7 @@ if (managerCode.includes(ExtId)) {
 
 // Make symbolic link in scratch-gui. 
 try {
-    fs.symlinkSync(path.resolve(path.join(tm2sRoot, 'scratch-gui', GuiExtPath)), path.resolve(path.join(GuiRoot, GuiExtPath)));
+    fs.symlinkSync(path.resolve(path.join(ExtRoot, 'scratch-gui', GuiExtPath)), path.resolve(path.join(GuiRoot, GuiExtPath)));
     console.log(`Make link: ${path.resolve(path.join(GuiRoot, GuiExtPath))}`);
 } catch (err) {
     console.log(`Already exists link: ${path.resolve(path.join(GuiRoot, GuiExtPath))}`);
@@ -79,17 +79,17 @@ try {
 
 // Make symbolic link from scratch-gui for ESLint.
 try {
-    fs.symlinkSync(path.resolve(path.join(GuiRoot, 'node_modules')), path.resolve(path.join(tm2sRoot, 'scratch-gui', 'node_modules')));
-    console.log(`Make link: ${path.resolve(path.join(tm2sRoot, 'scratch-gui', 'node_modules'))}`);
+    fs.symlinkSync(path.resolve(path.join(GuiRoot, 'node_modules')), path.resolve(path.join(ExtRoot, 'scratch-gui', 'node_modules')));
+    console.log(`Make link: ${path.resolve(path.join(ExtRoot, 'scratch-gui', 'node_modules'))}`);
 } catch (err) {
-    console.log(`Already exists link: ${path.resolve(path.join(tm2sRoot, 'scratch-gui', 'node_modules'))}`);
+    console.log(`Already exists link: ${path.resolve(path.join(ExtRoot, 'scratch-gui', 'node_modules'))}`);
 }
 
 try {
-    fs.symlinkSync(path.resolve(path.join(GuiRoot, 'src', '.eslintrc.js')), path.resolve(path.join(tm2sRoot, 'scratch-gui', 'src', '.eslintrc.js')));
-    console.log(`Make link: ${path.resolve(path.join(tm2sRoot, 'scratch-gui', 'src', '.eslintrc.js'))}`);
+    fs.symlinkSync(path.resolve(path.join(GuiRoot, 'src', '.eslintrc.js')), path.resolve(path.join(ExtRoot, 'scratch-gui', 'src', '.eslintrc.js')));
+    console.log(`Make link: ${path.resolve(path.join(ExtRoot, 'scratch-gui', 'src', '.eslintrc.js'))}`);
 } catch (err) {
-    console.log(`Already exists link: ${path.resolve(path.join(tm2sRoot, 'scratch-gui', 'src', '.eslintrc.js'))}`);
+    console.log(`Already exists link: ${path.resolve(path.join(ExtRoot, 'scratch-gui', 'src', '.eslintrc.js'))}`);
 }
 
 // Add the extension to list of scratch-gui. 
