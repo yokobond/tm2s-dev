@@ -1,0 +1,26 @@
+{
+  "name": "tm2s-dev",
+  "version": "0.0.1",
+  "description": "developer environment for tm2scratch",
+  "main": "setup-dev.js",
+  "scripts": {
+    "setup": "node setup-dev.js",
+    "setup:pose": "node scripts/setup-pose.js && cd ../tmpose2scratch && npm install ml5",
+    "install:pose": "node scripts/install-pose.js",
+    "start:local": "cd ../scratch-gui && npm run start -- --https",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yokobond/tm2s-dev.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Koji Yokokawa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yokobond/tm2s-dev/issues"
+  },
+  "homepage": "https://github.com/yokobond/tm2s-dev#readme"
+}
