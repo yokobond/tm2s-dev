@@ -5,8 +5,8 @@
   "main": "setup-dev.js",
   "scripts": {
     "setup": "node setup-dev.js",
-    "setup:pose": "node scripts/setup-pose.js && cd ../tmpose2scratch && npm install ml5",
-    "install:pose": "node scripts/install-pose.js",
+    "setup:pose": "node scripts/setup-pose.js",
+    "install:pose": "node scripts/install-pose.js && cd ../scratch-vm && npm install @teachablemachine/pose",
     "start:local": "cd ../scratch-gui && npm run start -- --https",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
