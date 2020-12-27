@@ -4,7 +4,7 @@
   "description": "developer environment for tm2scratch",
   "main": "setup-dev.js",
   "scripts": {
-    "setup": "node setup-dev.js",
+    "setup": "node scripts/setup-dev.js",
     "setup:pose": "node scripts/setup-pose.js",
     "install:pose": "node scripts/install-pose.js && cd ../scratch-vm && npm install @teachablemachine/pose",
     "start:local": "cd ../scratch-gui && npm run start -- --https",
