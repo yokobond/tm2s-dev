@@ -7,7 +7,7 @@
     "setup": "node scripts/setup-dev.js",
     "setup:pose": "node scripts/setup-pose.js",
     "install:tm2s": "node scripts/install-tm2s.js",
-    "install:pose": "node scripts/install-pose.js && cd ../scratch-vm && npm install @teachablemachine/pose",
+    "install:pose": "node scripts/install-pose.js",
     "start:local": "cd ../scratch-gui && npm run start -- --https",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
